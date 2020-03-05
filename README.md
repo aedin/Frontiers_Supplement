@@ -4,10 +4,9 @@
 
 
 #  Description
+This workshop will provide a beginner's guide to principal component analysis (PCA), the difference between singular value decomposition, different forms of PCA and fast PCA for single-cell data. We will describe how to detect artifacts and select the optimal number of components. It will focus on SVD and PCA applied to single-cell data.
 
-Principal component analysis (PCA) is a key step in many bioinformatics pipelines.. But what exactly is PCA, anyway, and how does it work? What is the difference between the various implementations of PCA in R? How is PCA output interpreted?
- 
-In this interactive session lecture + lab session, we will take a deep dive into the various implementations of singular value decomposition (SVD) and principal component analysis (PCA) to clarify the relationship between these methods, and to demonstrate the equivalencies and contrasts between these methods. We will also discuss interpretation of outputs, as well as some common pitfalls and sources of confusion in utilizing these methods.
+Principal component analysis (PCA) is a key step in many bioinformatics pipelines. In this interactive session we will take a deep dive into the various implementations of singular value decomposition (SVD) and principal component analysis (PCA) to clarify the relationship between these methods, and to demonstrate the equivalencies and contrasts between these methods. We will also discuss interpretation of outputs, as well as some common pitfalls and sources of confusion in utilizing these methods.
  
 ## Pre-requisites
 A basic understanding of R syntax would be helpful, but not required. No prior knowledge of PCA necessary.
