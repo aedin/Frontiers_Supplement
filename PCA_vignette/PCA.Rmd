@@ -445,6 +445,7 @@ explor::explor(p4)
 
 
 ```{r, eval=FALSE}
+library("FactoMineR")
 data(children)
 res.ca <- CA(children, row.sup = 15:18, col.sup = 6:8)
 explor(res.ca)
@@ -495,6 +496,7 @@ library(ggplot2)
 library(ggfortify)
 ggplot2::autoplot(ir.pca, data=iris, colour="Species", frame=TRUE, frame.type="t") 
 ```
+
 ```{r}
 library(ggplot2)
 ggplot(ir.pca,aes(PC1, PC2))+ 
