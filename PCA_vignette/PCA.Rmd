@@ -24,7 +24,7 @@ In R, there are several functions from different packages that allow us to perfo
 
 **Note, although prcomp sets scale=FALSE for consistency with S, in general scaling is advised. We will demonstrate first pca of unscaled and then scaled data. Scaling scaled the variables to have unit variance and is advised before  analysis takes place.** 
 
-We will demonstrate some of these and explore these using exploR
+We will demonstrate some of these and explore these using the `explor` package.
 
 
 
@@ -76,7 +76,7 @@ points(x=mean(x_obs),y=mean(y_obs),col="orange", pch=19) #show center
 
 # Computing via svd of **unscaled**, centered, covariance  matrix
 
-PCA can be computed as a singular value decomposition of a column centered matrix. Therefore we first processs the matrix.  In this example, we don't scale. This is not advised.
+PCA can be computed as a singular value decomposition of a column centered matrix. Therefore we first process the matrix.  In this example, we don't scale. This is not advised.
 
 ```{r}
 #center matrix
@@ -136,7 +136,7 @@ lines(x_obs,eigenVectors[2,1]/eigenVectors[1,1]*M[x]+mean(y_obs),col=8)
 
 This shows the first principal axis. Note that it passes through the mean as expected. The ratio of the eigenvectors gives the slope of the axis. 
 
-Next plot the second principal axis, orthlogonal to the first
+Next plot the second principal axis, orthogonal to the first
 
 ```{r}
 plot(P,asp=1,col=1) #plot points
@@ -257,7 +257,7 @@ identical(eigSum.svd,eigSum.pca)
 ```
 
 
-If we had more components, we could generate a scree plot. Its not very useful with 2 components, but here is the code
+If we had more components, we could generate a scree plot. It's not very useful with 2 components, but here is the code
 
 Caculate the Proportion of Variance explained by each component (eig sum Proportion above)
 ```{r}
@@ -339,13 +339,13 @@ head(p4$tab)  # centered/scaled data.
 head(scale(P))
 ```
 
-The values used for centering are stored in cent, it is a the colMeans. norm provides the sd of the columns
+The values used for centering are stored in cent, it is a the `colMeans`. norm provides the sd of the columns
 ```{r}
 p4$cent == colMeans(P)
 sd.n <- function(x) sqrt(var(x) * (length(x) - 1)/length(x))
 identical(p4$norm,apply(P, 2, sd.n))
 ```
-The summary printout is equivalent to P3 (p3$eig) above. The eigenvales are stored in p4$eig.
+The summary printout is equivalent to P3 (p3\$eig) above. The eigenvalues are stored in p4\$eig.
 
 ```{r}
 summary(p4)
@@ -365,7 +365,7 @@ p4$nf
 ```
 
 c1 gives the variables’ coordinates, normed to 1. It is also called the
-coefficients of the combination or the loadings of variables.  Equally the outpur matrix l1 gives the individuals’ coordinates, normed to 1. It is also called the
+coefficients of the combination or the loadings of variables.  Equally the output matrix l1 gives the individuals’ coordinates, normed to 1. It is also called the
 loadings of individuals.
 ```{r}
 p4$c1
