@@ -1,3 +1,7 @@
+library("ggplot2")
+library("ggpubr")
+library("reshape2")
+
 m=counts(int_sce_sc_Dropseq_qc)
 m= rgamma(100,0.5)
 #m[sample(1:1000, 200)]<-0
