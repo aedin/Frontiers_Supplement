@@ -45,7 +45,7 @@ With ade4::dudi.pca and prcomp the default is center = TRUE, scale = TRUE.But  w
 
 
 #  Toy data
-Create a cloud of points; two vectors, x,y of length 100. 
+Create a cloud of points; two vectors, `x` and `y` of length 100. 
 
 ```{r}
  set.seed(2)             #sets the seed for random number generation.
@@ -167,7 +167,7 @@ v	- the right singular vectors of x
 
 The columns u from the SVD correspond to the principal components x in the PCA. 
 
-Furthermore, the matrix v from the SVD is equivalent to the rotation matrix returned by prcomp.
+Furthermore, the matrix v from the SVD is equivalent to the rotation matrix returned by `prcomp`.
 
 Now repeat the code above but **scale** and center the data scale(P, center=TRUE, scale=TRUE).
 
@@ -219,7 +219,7 @@ eigSum.svd
 
 ## prcomp
 
-First stats::prcomp.  The eigenvectors are stored in \$rotation. Note these are the same as svd$v on scale data 
+First `stats::prcomp`.  The eigenvectors are stored in \$rotation. Note these are the same as svd$v on scaled data 
 ```{r}
 p1<- prcomp(P, scale = TRUE)
 p1$rotation
@@ -271,7 +271,7 @@ plot(ProportionVariance, xlim = c(0, 5), type = "b", pch = 16, xlab = "principal
 ```
 
 # princomp
-princomp was written for compatiblity with S-PLUS however it is not recommended. Its is better to use prcomp or svd. That is because by default princomp performs a decompostion of the covariance not correlation matrix. Princomp can call eigen on the correlation or covariance matrix. Its  default calculation uses divisor N for the covariance matrix.
+`princomp` was written for compatiblity with S-PLUS however it is not recommended. Its is better to use prcomp or svd. That is because by default princomp performs a decomposition of the covariance not correlation matrix. Princomp can call eigen on the correlation or covariance matrix. Its  default calculation uses divisor N for the covariance matrix.
 
 ```{r}
 p2<-stats::princomp(P)
