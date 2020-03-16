@@ -509,17 +509,17 @@ ggplot(ir.pca,aes(PC1, PC2))+
 stat_ellipse() and stat_density_2d() have a lot of options. See manual pages
 
 multivariate normal distribution.
-```{}
+```{r, eval = FALSE}
 stat_ellipse(type = "norm", linetype = 2)  
 ```
 
 Euclid, is a circle with radius = level
-```{}
+```{r, eval = FALSE}
 stat_ellipse(type = "euclid", level = 3) 
 ```
 
 multivariate t-distribution
-```{}
+```{r, eval = FALSE}
 stat_ellipse(type = "t") 
 ```
 
