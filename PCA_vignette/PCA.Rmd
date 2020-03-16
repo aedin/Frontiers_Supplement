@@ -481,7 +481,7 @@ fviz_pca_biplot(p1, repel = TRUE,
 
 
 
-# Drawing Ellispe
+# Drawing Ellipse
 
 Example using iris dataset
 
@@ -523,6 +523,10 @@ multivariate t-distribution
 stat_ellipse(type = "t") 
 ```
 
+# Session info {-}
 
+```{r}
+sessionInfo()
+```
 
 
