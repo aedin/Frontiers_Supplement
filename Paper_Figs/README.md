@@ -1,4 +1,4 @@
-# Impact of Data Preprocessing on Integrative Analysis of Single Cell Data
+# Impact of Data Preprocessing on Integrative Matrix Factorization of Single Cell Data
 
 Code to reproduce the figures from this mini-review article.
 
