@@ -18,6 +18,7 @@ These figures are created using the single cell mixology data from the Tian et a
 ## Figure 2
 
 `fig2bc.R` produces the plots for parts b and c
+
 `fig2d.R` produces the plots for part d
 
 <img src="imgs/Fig2 UPDATED.jpg" width="600"/>
