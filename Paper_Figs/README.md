@@ -9,8 +9,8 @@ These figures are created using the single cell mixology data from the Tian et a
 
 `fig1.R` produces the histograms shown in **Figure 1**:
 
-<img src="Fig1 UPDATED with 10x.jpg" width="300"/>
+<img src="Fig1 UPDATED with 10x.jpg" width="600"/>
 
 `fig2bc.R` produces the plots for parts b and c, and `fig2d.R` produces the plots for part d of **Figure 2**:
 
-<img src="Fig2 UPDATED.jpg" width="300"/>
+<img src="Fig2 UPDATED.jpg" width="600"/>
