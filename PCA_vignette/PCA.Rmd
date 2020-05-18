@@ -41,7 +41,7 @@ Give an input matrix P and result res
 |dudi.pca(P, center=TRUE, scale=TRUE) | res\$c1 | res\$li | scatter(res)|
 
 
-With ade4::dudi.pca and prcomp the default is center = TRUE, scale = TRUE.But  with princomp, cor=FALSE by default. 
+`ade4::dudi.pca` and `prcomp` by default both perform correlation-based PCA as they center and scale the data prior to SVD, with `center = TRUE`, `scale = TRUE`. In contrast, `princomp` by default performs covariance-based PCA, only centering the data without scaling, as it sets `cor=FALSE` by default. 
 
 
 #  Toy data
@@ -328,7 +328,7 @@ p3$var$coord
 ```
 
 
-## ADE4::dudi.pca
+## ade4::dudi.pca
 First ade4::dudi.pca scales the data and stores the scaled data in $tab. In PCA this will be almost equivalent to scale. However there is a minor difference (see https://pbil.univ-lyon1.fr/R/pdf/course2.pdf).  ade4 usees the duality diagram framework for computing pca and other matrix factorizations (so it provides lw and cw which are the row and columns weights). See Cruz and Holmes 2011 for a wonderful tutorial on the duality diagram framework https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3265363/
 
 
