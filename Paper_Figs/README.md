@@ -11,12 +11,13 @@ These figures are created using the single cell mixology data from the Tian et a
 
 ## Figure 1
 
-`fig1.R` produces these histograms:
+`fig1.R` produces these histograms
 
 <img src="imgs/Fig1 UPDATED with 10x.jpg" width="600"/>
 
 ## Figure 2
 
-`fig2bc.R` produces the plots for parts b and c, and `fig2d.R` produces the plots for part d
+`fig2bc.R` produces the plots for parts b and c
+`fig2d.R` produces the plots for part d
 
 <img src="imgs/Fig2 UPDATED.jpg" width="600"/>
