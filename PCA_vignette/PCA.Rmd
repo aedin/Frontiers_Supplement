@@ -1,7 +1,7 @@
 ---
 title: "Short PCA Vignette"
 author: "Aedin"
-date: "May 1, 2018"
+date: "`r Sys.Date()`"
 output: BiocStyle::html_document
 ---
 
@@ -24,7 +24,7 @@ In R, there are several functions from different packages that allow us to perfo
 
 **Note, although prcomp sets scale=FALSE for consistency with S, in general scaling is advised. We will demonstrate first pca of unscaled and then scaled data. Scaling scaled the variables to have unit variance and is advised before  analysis takes place.** 
 
-We will demonstrate some of these and explore these using exploR
+We will demonstrate some of these and explore these using the `explor` package.
 
 
 
@@ -45,7 +45,7 @@ With ade4::dudi.pca and prcomp the default is center = TRUE, scale = TRUE.But  w
 
 
 #  Toy data
-Create a cloud of points; two vectors, x,y of length 100. 
+Create a cloud of points; two vectors, `x` and `y` of length 100. 
 
 ```{r}
  set.seed(2)             #sets the seed for random number generation.
@@ -76,7 +76,7 @@ points(x=mean(x_obs),y=mean(y_obs),col="orange", pch=19) #show center
 
 # Computing via svd of **unscaled**, centered, covariance  matrix
 
-PCA can be computed as a singular value decomposition of a column centered matrix. Therefore we first processs the matrix.  In this example, we don't scale. This is not advised.
+PCA can be computed as a singular value decomposition of a column centered matrix. Therefore we first process the matrix.  In this example, we don't scale. This is not advised.
 
 ```{r}
 #center matrix
@@ -136,7 +136,7 @@ lines(x_obs,eigenVectors[2,1]/eigenVectors[1,1]*M[x]+mean(y_obs),col=8)
 
 This shows the first principal axis. Note that it passes through the mean as expected. The ratio of the eigenvectors gives the slope of the axis. 
 
-Next plot the second principal axis, orthlogonal to the first
+Next plot the second principal axis, orthogonal to the first
 
 ```{r}
 plot(P,asp=1,col=1) #plot points
@@ -167,7 +167,7 @@ v	- the right singular vectors of x
 
 The columns u from the SVD correspond to the principal components x in the PCA. 
 
-Furthermore, the matrix v from the SVD is equivalent to the rotation matrix returned by prcomp.
+Furthermore, the matrix v from the SVD is equivalent to the rotation matrix returned by `prcomp`.
 
 Now repeat the code above but **scale** and center the data scale(P, center=TRUE, scale=TRUE).
 
@@ -219,7 +219,7 @@ eigSum.svd
 
 ## prcomp
 
-First stats::prcomp.  The eigenvectors are stored in \$rotation. Note these are the same as svd$v on scale data 
+First `stats::prcomp`.  The eigenvectors are stored in \$rotation. Note these are the same as svd$v on scaled data 
 ```{r}
 p1<- prcomp(P, scale = TRUE)
 p1$rotation
@@ -257,7 +257,7 @@ identical(eigSum.svd,eigSum.pca)
 ```
 
 
-If we had more components, we could generate a scree plot. Its not very useful with 2 components, but here is the code
+If we had more components, we could generate a scree plot. It's not very useful with 2 components, but here is the code
 
 Caculate the Proportion of Variance explained by each component (eig sum Proportion above)
 ```{r}
@@ -271,7 +271,7 @@ plot(ProportionVariance, xlim = c(0, 5), type = "b", pch = 16, xlab = "principal
 ```
 
 # princomp
-princomp was written for compatiblity with S-PLUS however it is not recommended. Its is better to use prcomp or svd. That is because by default princomp performs a decompostion of the covariance not correlation matrix. Princomp can call eigen on the correlation or covariance matrix. Its  default calculation uses divisor N for the covariance matrix.
+`princomp` was written for compatiblity with S-PLUS however it is not recommended. Its is better to use prcomp or svd. That is because by default princomp performs a decomposition of the covariance not correlation matrix. Princomp can call eigen on the correlation or covariance matrix. Its  default calculation uses divisor N for the covariance matrix.
 
 ```{r}
 p2<-stats::princomp(P)
@@ -339,13 +339,13 @@ head(p4$tab)  # centered/scaled data.
 head(scale(P))
 ```
 
-The values used for centering are stored in cent, it is a the colMeans. norm provides the sd of the columns
+The values used for centering are stored in cent, it is a the `colMeans`. norm provides the sd of the columns
 ```{r}
 p4$cent == colMeans(P)
 sd.n <- function(x) sqrt(var(x) * (length(x) - 1)/length(x))
 identical(p4$norm,apply(P, 2, sd.n))
 ```
-The summary printout is equivalent to P3 (p3$eig) above. The eigenvales are stored in p4$eig.
+The summary printout is equivalent to P3 (p3\$eig) above. The eigenvalues are stored in p4\$eig.
 
 ```{r}
 summary(p4)
@@ -365,7 +365,7 @@ p4$nf
 ```
 
 c1 gives the variables’ coordinates, normed to 1. It is also called the
-coefficients of the combination or the loadings of variables.  Equally the outpur matrix l1 gives the individuals’ coordinates, normed to 1. It is also called the
+coefficients of the combination or the loadings of variables.  Equally the output matrix l1 gives the individuals’ coordinates, normed to 1. It is also called the
 loadings of individuals.
 ```{r}
 p4$c1
@@ -445,6 +445,7 @@ explor::explor(p4)
 
 
 ```{r, eval=FALSE}
+library("FactoMineR")
 data(children)
 res.ca <- CA(children, row.sup = 15:18, col.sup = 6:8)
 explor(res.ca)
@@ -480,7 +481,7 @@ fviz_pca_biplot(p1, repel = TRUE,
 
 
 
-# Drawing Ellispe
+# Drawing Ellipse
 
 Example using iris dataset
 
@@ -495,6 +496,7 @@ library(ggplot2)
 library(ggfortify)
 ggplot2::autoplot(ir.pca, data=iris, colour="Species", frame=TRUE, frame.type="t") 
 ```
+
 ```{r}
 library(ggplot2)
 ggplot(ir.pca,aes(PC1, PC2))+ 
@@ -507,20 +509,24 @@ ggplot(ir.pca,aes(PC1, PC2))+
 stat_ellipse() and stat_density_2d() have a lot of options. See manual pages
 
 multivariate normal distribution.
-```{}
+```{r, eval = FALSE}
 stat_ellipse(type = "norm", linetype = 2)  
 ```
 
 Euclid, is a circle with radius = level
-```{}
+```{r, eval = FALSE}
 stat_ellipse(type = "euclid", level = 3) 
 ```
 
 multivariate t-distribution
-```{}
+```{r, eval = FALSE}
 stat_ellipse(type = "t") 
 ```
 
+# Session info {-}
 
+```{r}
+sessionInfo()
+```
 
 
