@@ -1,6 +1,6 @@
 # Hitchhikers Guide to PCA; Demystifying dimensionality reduction in R/Bioconductor 
 
-# Lauren Hsu, Aedin Culhane
+*Lauren Hsu, Aedin Culhane*
 
 
 #  Description
