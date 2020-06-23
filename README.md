@@ -1,4 +1,5 @@
-# Hitchhikers Guide to PCA; Demystifying dimensionality reduction in R/Bioconductor 
+# Hitchhiker's Guide to PCA 
+## Demystifying dimensionality reduction in R/Bioconductor 
 
 *Lauren Hsu, Aedin Culhane*
 
