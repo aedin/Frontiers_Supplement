@@ -46,3 +46,5 @@ Suggests:
     knitr
 License: GPL-2
 Encoding: UTF-8
+VignetteBuilder: knitr
+URL: https://github.com/aedin/Frontiers_Supplement
