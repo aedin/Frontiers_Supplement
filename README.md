@@ -15,29 +15,32 @@ A basic understanding of R syntax would be helpful, but not required. No prior k
 We invite audience members to engage with questions and examples from their own workflows. R notebooks will also be available in advance to run code interactively with the workshop.
  
 ### _R_ / _Bioconductor_ packages used
-stats (prcomp, princomp, svd), FactoMineR, ade4, irlba, ggplot
+- stats (`prcomp`, `princomp`, `svd`)
+- FactoMineR
+- ade4
+- irlba
+- ggplot2
  
 ### Time outline
-Set-up + package installation (5 min)
-Introduction to matrix factorization and PCA [conceptual] (15 min)
-Interactive demonstration of methods (25 min)
-Potential pitfalls, interpreting outputs, and how to decide what’s right for your pipeline (15 min)
+- Set-up + package installation (5 min)
+- Introduction to matrix factorization and PCA [conceptual] (15 min)
+- Interactive demonstration of methods (25 min)
+- Potential pitfalls, interpreting outputs, and how to decide what’s right for your pipeline (15 min)
  
 ## Workshop goals and objectives
  
 Upon completion of this workshop, we expect participants to have gained an understanding of how to apply PCA and other SVD-based methods in research.
- 
 
 ### Learning goals
-Understand how PCA works, the variations of PCA, and how it relates to SVD
-Suggest appropriate use cases for these dimensionality reduction techniques
-Select appropriate methods for use in bioinformatics pipelines
+1. Understand how PCA works, the variations of PCA, and how it relates to SVD
+2. Suggest appropriate use cases for these dimensionality reduction techniques
+3. Select appropriate methods for use in bioinformatics pipelines
  
 ### Learning objectives
  
-Describe the similarities and differences between the different implementations of PCA and SVD in R/Bioconductor
-Perform PCA/SVD on real data
-Creating plots to interpret PCA/SVD outputs, including diagnosis of problems like arch/horseshoe effect
+1. Describe the similarities and differences between the different implementations of PCA and SVD in R/Bioconductor
+2. Perform PCA/SVD on real data
+3. Creating plots to interpret PCA/SVD outputs, including diagnosis of problems like arch/horseshoe effect
 
 
  
