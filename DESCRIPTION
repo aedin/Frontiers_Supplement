@@ -1,0 +1,48 @@
+Title: Hitchhikers Guide to PCA: Demystifying dimensionality reduction in R/Bioconductor
+Version: 0.1.0
+Date: 2020-06-23
+Authors@R: 
+    c(person(given = "Lauren", family = "Hsu",
+             role = c("aut"),
+             email = "lrnshoe@gmail.com",
+             comment = c(ORCID = "0000-0002-6035-7381")),
+     person(given = "Aedin", family = "Culhane",
+             role = c("aut", "cre"),
+             email = "aedin@jimmy.harvard.edu",
+             comment = c(ORCID = "0000-0002-1395-9734")))
+Description: 
+    This workshop will provide a beginner's guide to principal component analysis (PCA), the 
+    difference between singular value decomposition, different forms of PCA and fast PCA for 
+    single-cell data. We will describe how to detect artifacts and select the optimal number 
+    of components. It will focus on SVD and PCA applied to single-cell data.
+
+    Principal component analysis (PCA) is a key step in many bioinformatics pipelines. 
+    In this interactive session we will take a deep dive into the various implementations 
+    of singular value decomposition (SVD) and principal component analysis (PCA) to clarify 
+    the relationship between these methods, and to demonstrate the equivalencies and 
+    contrasts between these methods. We will also discuss interpretation of outputs, as 
+    well as some common pitfalls and sources of confusion in utilizing these methods.
+Imports: 
+    ade4,
+    explor,
+    factoextra,
+    FactoMineR,
+    GDAtools,
+    ggfortify,
+    ggplot2, 
+    ggthemes, 
+    grDevices,
+    gridExtra,
+    irlba, 
+    MASS,
+    mogsa,
+    scater,
+    scatterD3,
+    SingleCellExperiment, 
+    SummarizedExperiment
+Suggests: 
+    BiocStyle,
+    devtools,
+    knitr
+License: GPL-2
+Encoding: UTF-8
